@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 <span>YouTube</span> Downloader</h1>
+            <p>حمّل فيديوهات وقوائم تشغيل بجودة عالية</p>
+        </header>
+
+        <div class="card">
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="🔗 الصق رابط YouTube هنا...">
+                <button id="fetchBtn" class="btn-primary">🚀 بحث</button>
+            </div>
+
+            <div class="format-group">
+                <label class="radio-label">
+                    <input type="radio" name="format" value="mp3" checked>
+                    <span>🎵 MP3 (صوت)</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="format" value="mp4">
+                    <span>🎬 MP4 (فيديو)</span>
+                </label>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>جاري المعالجة...</p>
+        </div>
+
+        <div id="result" class="result-card hidden">
+            <div class="result-header">
+                <h2 id="videoTitle"></h2>
+                <button id="downloadBtn" class="btn-download">⬇️ تحميل</button>
+            </div>
+            <div id="playlistContainer"></div>
+        </div>
+
+        <footer>
+            <p>🚀 يعمل بـ yt-dlp + Flask | مستضاف على Vercel</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
